@@ -9,7 +9,7 @@
         <v-icon>mdi-google</v-icon>:logout
       </v-btn>
     </v-app-bar>
-    <v-content>
+    <v-main>
       <v-container v-if="!logined" class="fill-height" fluid>
         <v-row align="center" justify="center">
           <v-col cols="12" sm="8" md="4">
@@ -87,7 +87,7 @@
           </v-col>
         </v-row>
       </v-container>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
@@ -98,15 +98,16 @@ import "firebase/firestore";
 import "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "*************************",
-  authDomain: "*************************",
-  databaseURL: "*************************",
-  projectId: "*************************",
-  storageBucket: "*************************",
-  messagingSenderId: "*************************",
-  appId: "*************************"
+  apiKey: "AIzaSyBunM2rT71ya7Pb_uMM6a94EYL116GnIz0",
+  authDomain: "nuxt-chat-experiment.firebaseapp.com",
+  projectId: "nuxt-chat-experiment",
+  storageBucket: "nuxt-chat-experiment.appspot.com",
+  messagingSenderId: "495828908927",
+  appId: "1:495828908927:web:75bda600ea4d4b8a26f84a"
 };
-firebase.initializeApp(firebaseConfig);
+if (firebase.apps.length === 0) {
+  firebase.initializeApp(firebaseConfig);
+}
 const firebaseApp = firebase.firestore();
 const firebaseAuth = firebase.auth();
 
